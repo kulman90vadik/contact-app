@@ -1,0 +1,29 @@
+@import '../../scss/vars.scss';
+
+.header {
+  padding: 15px 0;
+  background-color: $grey;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid $accent;
+  svg {
+    margin: 0 3px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 32px;
+}

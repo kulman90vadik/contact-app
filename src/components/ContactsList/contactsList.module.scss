@@ -1,0 +1,130 @@
+@import '../../scss/vars.scss';
+
+
+.contactsList {
+  width: 64%;
+}
+
+.item {
+  padding: 10px 16px;
+  height: 102px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in;
+  &:nth-child(even) {
+    background-color: rgba($accent, 0.1);
+  }
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+  &:hover {
+    border-color: $accent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0 16px 0 0 ;
+    .image {
+      height: 100px;
+      border-radius: 0;
+      border: none;
+      width: 100px;
+    }
+  }
+}
+
+.item,
+.left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+  border: 1px solid $accent;
+  min-width: 80px;
+  width: 80px;
+  min-height: 80px;
+  height: 80px;
+  object-fit: cover;
+  height: auto;
+  margin-right: 13px;
+  transition: all 0.3s ease-in;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.icon {
+  fill: none;
+  stroke: gold;
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s ease-in, transform 0.3s ease-in;
+  &:hover {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+.iconActive {
+  fill: gold;
+}
+
+.star {
+  margin-right: 10px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.show {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &:hover {
+    span {
+      transform: scale(1.7);
+    }
+  }
+  span {
+    transition: transform 0.3s ease-in;
+    display: block;
+    border-radius: 50%;
+    background-color: $accent;
+    width: 3px;
+    height: 3px;
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.actions {
+  position: absolute;
+  background-color: #ccc;
+  top: 31px;
+  right: -35px;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  width: 180px;
+  border-radius: 10px;
+  li {
+    background-color: $accent;
+    width: 100%;
+    font-size: 15px;
+    padding: 5px;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    &:hover {
+      background-color: rgba($accent, 0.8);
+    }
+  }
+}

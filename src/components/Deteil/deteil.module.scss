@@ -1,0 +1,66 @@
+@import '../../scss/vars.scss';
+
+
+.deteil {
+  margin-bottom: 20px;
+  background-color: $accent;
+  transition: overflow .2s ease-in;
+  overflow: hidden;
+}
+
+.info {
+  border-radius: 20px 20px 0 0;
+  padding: 16px;
+  background-color: $grey;
+}
+
+.item {
+  width: 100%;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid $accent;
+  color: rgba($accent, .7);
+  outline: transparent;
+  transition: box-shadow 0.3s ease-in, border-color 0.3s ease-in;
+  &:focus {
+    border-color: rgba($accent, .7);
+    box-shadow: 2px 2px 10px $accent;
+  }
+}
+
+.btn {
+  width: 100%;
+  // padding: 8px;
+  border-radius: 8px;
+  background-color: $accent;
+  color: $white;
+  overflow: hidden;
+  transition: box-shadow .3s ease-in;
+  svg {
+    padding: 5px 0;
+    height: 35px;
+    height: 35px;
+  }
+  &:hover {
+    box-shadow: 2px 2px 10px $accent;
+  }
+}
+
+.submit {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: $accent;
+  color: $white;
+  transition: box-shadow .3s ease-in;
+  &:hover {
+    box-shadow: 2px 2px 10px $accent;
+  }
+}
