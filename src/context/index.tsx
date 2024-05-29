@@ -1,23 +1,20 @@
 
 import {Dispatch, ReactNode, SetStateAction, createContext, useState} from 'react'
-import { usersType } from '../type/usersType'
-
 
 interface IMenuContext {
-  newPerson: usersType,
-  setNewPerson: Dispatch<SetStateAction<usersType>>
+  isAuth: boolean,
+  setIsAuth: Dispatch<SetStateAction<boolean>>
 }
 
 export const Context = createContext<IMenuContext>({
-  newPerson: {"id": 0,  "star": false, "email":"", "name": "", "phone": '', "avatar": ""},
-  setNewPerson: () => {},
+  isAuth: false,
+  setIsAuth: () => {},
 })
 
-
-export const SetProvider = ({children}: {children: ReactNode }) => {
-  const[newPerson, setNewPerson] = useState<usersType>({"id": 0,  "star": false, "email":"", "name": "", "phone": '', "avatar": ""});
+export const AuthProvider = ({children}: {children: ReactNode }) => {
+  const[isAuth, setIsAuth] = useState(false);
   return (
-    <Context.Provider value={{newPerson, setNewPerson}}>
+    <Context.Provider value={{isAuth, setIsAuth}}>
         {children}
     </Context.Provider>
   )

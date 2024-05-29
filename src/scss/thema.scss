@@ -1,0 +1,28 @@
+
+
+.dark {
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  background-color: $accent;
+  color: $white;
+
+  header {
+    button, a {
+      border-color: $white;
+      color: $white;
+      transition: box-shadow 0.2s ease-in;
+      &:hover {
+        box-shadow: 1px 1px 10px $white;
+      }
+      svg {
+        fill: $white;
+        stroke: $white;
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+
+
+
+}

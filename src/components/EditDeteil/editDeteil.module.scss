@@ -7,10 +7,14 @@
   // border-radius: 20px 20px 0 0;
   // display: block;
   // width: 34%;
+  border-radius: 20px 20px 0 0;
   background-color: $accent;
 }
 
-
+.newPersonDark {
+  background-color: rgba($white, .3);
+  color: $accent;
+}
 
 .info {
   // margin-top: -20px;

@@ -8,6 +8,9 @@ html {
   max-width: 1260px;
   padding: 0 25px;
   margin: 0 auto;
+  @media (max-width: 540px) {
+    padding: 0 15px;
+  }
 }
 
 html,

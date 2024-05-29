@@ -3,6 +3,9 @@
 
 .contactsList {
   width: 64%;
+  @media (max-width: 719px) {
+    width: 100%;
+  }
 }
 
 .item {
@@ -32,6 +35,11 @@
   }
 }
 
+.itemDark {
+  background-color: rgba($white, .7);
+  color: $accent;
+}
+
 .item,
 .left {
   display: flex;
@@ -50,6 +58,15 @@
   height: auto;
   margin-right: 13px;
   transition: all 0.3s ease-in;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 3px;
+  text-transform: uppercase;
 }
 
 .info {

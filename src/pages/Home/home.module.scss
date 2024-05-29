@@ -1,14 +1,16 @@
 @import '../../scss/vars.scss';
 
-
 .home {
-  // height: 100%;
+  padding-bottom: 40px;
 }
 
 .inner {
   display: flex;
   align-items: start;
   padding-top: 50px;
+  @media (max-width: 719px) {
+    flex-direction: column;
+  }
 }
 
 .left {
@@ -16,6 +18,15 @@
   border-radius: 20px 20px 0 0;
   display: block;
   width: 34%;
+  @media (max-width: 991px) {
+    width: 310px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 719px) {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 100%;
+  }
 }
 
 .btn {

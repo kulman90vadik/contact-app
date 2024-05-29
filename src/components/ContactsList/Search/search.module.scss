@@ -48,6 +48,12 @@
   }
 }
 
+.inputDark {
+  &:focus {
+    box-shadow: 2px 2px 19px $white;
+  }
+}
+
 .close {
   position: absolute;
   right: 10px;

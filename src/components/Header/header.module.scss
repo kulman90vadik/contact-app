@@ -2,7 +2,7 @@
 
 .header {
   padding: 15px 0;
-  background-color: $grey;
+  background-color: inherit;
 }
 
 .inner {
@@ -18,12 +18,39 @@
   padding: 0 14px;
   border-radius: 12px;
   border: 1px solid $accent;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease-in;
+  &:hover {
+    background-color: $accent;
+    color: $white;
+    svg {
+      fill: $white;
+      stroke: $white;
+    }
+  }
   svg {
+    width: 22px;
+    height: 22px;
     margin: 0 3px;
+    fill: $accent;
+    stroke: $accent;
+    transition: fill .3s ease-in;
   }
 }
+
+
 
 .title {
   font-weight: 600;
   font-size: 32px;
+  @media (max-width: 719px) {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.text {
+  @media (max-width: 719px) {
+    display: none;
+  }
 }

@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { usersType } from "../../../type/usersType";
 import styles from "../contactsList.module.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteId } from "../../../servises/deleteId";
 import ModalPhoto from "../../ModalPhoto/ModalPhoto";
 import Star from "./Star";
+import { Context } from "../../../context";
 type Props = {
   deteilCard: (n: number) => void;
   emptyCard: (n: number) => void;
@@ -17,6 +18,8 @@ const ContactItem = ({contact, deteilCard, emptyCard}:Props) => {
   const[delId, setDelId] = useState(0);
   const [open, setOpen] = useState(false);
   const refDiv = useRef<HTMLDivElement>(null);
+
+  const {isAuth} = useContext(Context);
 
   const showDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -68,7 +71,7 @@ const modalHandler = (e: React.MouseEvent<HTMLImageElement>, url: string) => {
 
   return (
     <>
-      <li className={styles.item} onClick={() => deteilCard(contact.id)}>
+      <li className={`${styles.item} ${isAuth ? styles.itemDark : ''}`} onClick={() => deteilCard(contact.id)}>
         <div className={styles.left}>
           <img className={styles.image} src={contact.avatar} alt={contact.name} 
           onClick={(e) => modalHandler(e, contact.avatar)}
@@ -88,14 +91,14 @@ const modalHandler = (e: React.MouseEvent<HTMLImageElement>, url: string) => {
               <span></span><span></span><span></span>
               <ul className={styles.actions} style={{ maxHeight: open ? "500px" : "0px" }}>
                 <li onClick={(e) => deleteItem(e, contact.id)}>Delete Contact</li>
-                <li >Chtoto Contact</li>
+                {/* <li >Chtoto Contact</li> */}
               </ul>
             </button>
           </div>
         </div>
       </li>
 
-      <ModalPhoto openModal={modal} setModal={setModal}>
+      <ModalPhoto openModal={modal} setModal={setModal} >
         <img src={urlImage} alt="Pho" />
       </ModalPhoto>
 

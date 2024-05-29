@@ -1,9 +1,10 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import styles from './deteil.module.scss'
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import DeteilPhoto from './DeteilPhoto';
 import { postId } from '../../servises/postId';
 import { UserPlus } from 'lucide-react';
+import { Context } from '../../context';
 
 
 const newDeteil = {
@@ -21,6 +22,7 @@ type Props = {
 }
 
 const Deteil = ({setPlusContact, plusContact}: Props) => {
+  const {isAuth} = useContext(Context);
   const [preview, setPreview] = useState<any>();
   const queryClient = useQueryClient();
   const[newPerson, setNewPerson] = useState({"name": '', "phone": '', "email": '', "avatar": ''})
@@ -55,13 +57,14 @@ const Deteil = ({setPlusContact, plusContact}: Props) => {
   return (
     <>
       {plusContact &&
-        <button className={styles.btn}
+        <button 
+        className={`${styles.btn} ${isAuth ? styles.btnDark : ''}`}
         style={{ maxHeight: plusContact ? "200px" : "0px" }}
          type="button" onClick={() => setPlusContact(false)}>
           <UserPlus />
         </button>
       }
-    <aside className={styles.deteil} style={{ maxHeight: !plusContact ? "1500px" : "0px" }}>
+    <aside className={`${styles.deteil} ${isAuth ? styles.deteilDark : ''}`} style={{ maxHeight: !plusContact ? "1500px" : "0px" }}>
       <form className={styles.form} onSubmit={changeForm}>
 
        <DeteilPhoto newDeteil={newDeteil} setPreview={setPreview} preview={preview}/>

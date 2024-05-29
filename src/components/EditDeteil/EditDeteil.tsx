@@ -3,6 +3,8 @@ import { usersType } from "../../type/usersType";
 import styles from './editDeteil.module.scss';
 import { patchId } from "../../servises/patchId";
 import EditPhoto from "./EditPhoto";
+import { useContext } from "react";
+import { Context } from "../../context";
 
 type Props = {
   newPerson: usersType;
@@ -10,7 +12,7 @@ type Props = {
 }
 
 const EditnewPerson = ({newPerson, setNewPerson}:Props) => {
-
+  const {isAuth} = useContext(Context);
   const queryClient = useQueryClient();
   const {mutate} = useMutation({ // useMutation - для всего кроме GET!
     mutationKey: ['patch contact'],
@@ -27,7 +29,8 @@ const EditnewPerson = ({newPerson, setNewPerson}:Props) => {
 
 
   return (
-    <aside className={styles.newPerson}>
+    <aside className={`${styles.newPerson} ${isAuth ? styles.newPersonDark : ''}`}>
+      
     <form className={styles.form} onSubmit={changeForm}>
 
      <EditPhoto newPerson={newPerson} setNewPerson={setNewPerson}/>
