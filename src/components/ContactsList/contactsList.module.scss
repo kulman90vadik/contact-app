@@ -19,7 +19,7 @@
     background-color: rgba($accent, 0.1);
   }
   &:not(:last-child) {
-    margin-bottom: 2px;
+    margin-bottom: 10px;
   }
   &:hover {
     border-color: $accent;
@@ -125,8 +125,8 @@
 .actions {
   position: absolute;
   background-color: #ccc;
-  top: 31px;
-  right: -35px;
+  top: 32px;
+  right: -18px;
   overflow: hidden;
   transition: all 0.5s ease-in;
   width: 180px;
@@ -135,7 +135,7 @@
     background-color: $accent;
     width: 100%;
     font-size: 15px;
-    padding: 5px;
+    padding: 12px 5px;
     color: $white;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -143,5 +143,22 @@
     &:hover {
       background-color: rgba($accent, 0.8);
     }
+  }
+}
+
+.error {
+  padding-top: 30px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  div {
+    margin-top: 20px;
+    font-size: 60px;
   }
 }
